@@ -104,5 +104,19 @@ $(function(){
     updatePreview();
   });
 
+  // Foto: preview instantâneo
+  $('#photoInput').on('change', function(e){
+    const file = e.target.files[0];
+    if (file && file.type.match(/^image\//)) {
+      const reader = new FileReader();
+      reader.onload = function(ev) {
+        $('#previewAvatar').html(`<img src="${ev.target.result}" alt="Foto" style="width:72px;height:72px;object-fit:cover;border-radius:50%;">`);
+      };
+      reader.readAsDataURL(file);
+    } else {
+      $('#previewAvatar').html('');
+    }
+  });
+
   updatePreview();
 });
