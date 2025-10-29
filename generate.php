@@ -9,6 +9,7 @@ $email = e($_POST['email'] ?? '');
 $phone = e($_POST['phone'] ?? '');
 $address = e($_POST['address'] ?? '');
 $objective = nl2br(e($_POST['objective'] ?? ''));
+$objective_title = e($_POST['objective_title'] ?? '');
 
 $education_course = $_POST['education_course'] ?? [];
 $education_institution = $_POST['education_institution'] ?? [];
@@ -49,13 +50,17 @@ $skills = sanitize_array($skills);
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Currículo - <?php echo $name ?: 'Sem nome'; ?></title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="resume container">
-    <header class="resume-header">
-      <h1><?php echo $name ?: 'Nome'; ?></h1>
-      <p class="meta">
+  <div class="resume container py-4">
+    <header class="resume-header text-center mb-4">
+      <h1 class="mb-1"><?php echo $name ?: 'Nome'; ?></h1>
+      <?php if ($objective_title): ?>
+        <div class="h6 text-muted mb-2"><?php echo $objective_title; ?></div>
+      <?php endif; ?>
+      <p class="meta small text-muted">
         <?php if($email): ?><span><?php echo $email; ?></span><?php endif; ?>
         <?php if($phone): ?><span> | <?php echo $phone; ?></span><?php endif; ?>
         <?php if($address): ?><span> | <?php echo $address; ?></span><?php endif; ?>
