@@ -36,7 +36,6 @@
             <div class="mb-3">
               <label class="form-label">Foto</label>
               <input class="form-control" type="file" id="photoInput" accept="image/*">
-            </div>
               <label class="form-label">Nome completo</label>
               <input class="form-control" type="text" name="name" id="name">
             </div>
