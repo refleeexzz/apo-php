@@ -1,0 +1,25 @@
+/* styles.css - estilo básico para formulário e currículo */
+:root{--bg:#f7f9fb;--card:#fff;--accent:#2c7be5;--muted:#6b7280}
+*{box-sizing:border-box}
+body{font-family:Inter,Segoe UI,Arial, sans-serif;background:var(--bg);margin:0;padding:20px;color:#111}
+.container{max-width:900px;margin:0 auto}
+h1{text-align:center;margin-bottom:18px}
+.card{background:var(--card);padding:16px;border-radius:8px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.card h2{margin:0 0 8px 0}
+label{display:block;margin-bottom:8px}
+input[type=text], input[type=email], textarea{width:100%;padding:8px;border:1px solid #d1d5db;border-radius:4px}
+.items .item{border:1px dashed #e6e9ee;padding:10px;border-radius:6px;margin-bottom:8px;position:relative}
+.removeBtn{position:absolute;right:8px;top:8px;background:#ef4444;color:#fff;border:none;padding:6px 8px;border-radius:4px;cursor:pointer}
+.actions{display:flex;gap:8px;justify-content:flex-end}
+.actions button, .actions .button{background:var(--accent);color:#fff;border:none;padding:10px 14px;border-radius:6px;cursor:pointer;text-decoration:none}
+.actions button[type=reset]{background:#6b7280}
+.resume-header{background:var(--card);padding:14px;border-radius:8px;margin-bottom:12px;text-align:center}
+.resume-header h1{margin:0}
+.resume .card{box-shadow:none}
+.resume .meta{color:var(--muted);margin-top:6px}
+.resume .item{margin-bottom:10px}
+.skills{list-style:none;padding-left:0;display:flex;flex-wrap:wrap;gap:8px}
+.skills li{background:#eef2ff;padding:6px 10px;border-radius:20px}
+.period{color:var(--muted);font-size:.95em}
+.desc{margin-top:6px}
+@media print{body{background:#fff} .removeBtn, .actions, #addEducation, #addExperience, #addSkill{display:none} .container{max-width:100%}}
