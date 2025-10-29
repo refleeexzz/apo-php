@@ -76,4 +76,21 @@ h1{font-weight:700}
 	.preview-column{flex:0 0 41.666667%;max-width:41.666667%}
 }
 
-@media print{body{background:#fff} .navbar, .removeBtn, button, input[type=button], .btn{display:none} .container{max-width:100%}}
+@media print {
+	body { background: #fff; }
+	.navbar, .form-column, .removeBtn, button, input[type=button], .btn, .container > :not(.row), .row > :not(.preview-column), .preview-column > :not(.preview-card) {
+		display: none !important;
+	}
+	.container, .row, .preview-column, .preview-card {
+		display: block !important;
+		width: 100vw !important;
+		max-width: 100vw !important;
+		margin: 0 auto !important;
+		padding: 0 !important;
+		box-shadow: none !important;
+		border-radius: 0 !important;
+	}
+	.preview-card {
+		padding: 28px !important;
+	}
+}

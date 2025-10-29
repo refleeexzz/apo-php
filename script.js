@@ -7,6 +7,15 @@ $(function(){
     const obj = $('#objective').val() || 'Lorem ipsum exore st amet, consectetuer adipiscing elit, sed diam nonummy nibh';
     $('#previewObjective').text(obj);
 
+    // Update contact info in preview
+    const email = $('#email').val() || '';
+    const phone = $('#phone').val() || '';
+    const address = $('#address').val() || '';
+    let contactHtml = '';
+    if (email) contactHtml += `<span><i class='bi bi-envelope'></i> ${escapeHtml(email)}</span><br>`;
+    if (phone) contactHtml += `<span><i class='bi bi-telephone'></i> ${escapeHtml(phone)}</span><br>`;
+    if (address) contactHtml += `<span><i class='bi bi-geo-alt'></i> ${escapeHtml(address)}</span>`;
+    $('#previewContact').html(contactHtml);
     
     const educ = [];
     $('input[name="education_course[]"]').each(function(i){

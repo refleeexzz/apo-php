@@ -9,6 +9,16 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
   <script src="script.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var printBtn = document.getElementById('printBtn');
+      if (printBtn) {
+        printBtn.addEventListener('click', function() {
+          window.print();
+        });
+      }
+    });
+  </script>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-primary bg-transparent px-3 mb-4">
@@ -98,19 +108,21 @@
             </div>
 
           <div class="d-flex gap-2 mt-2">
-            <button type="submit" class="btn btn-primary">Gerar Currículo</button>
             <button type="reset" class="btn btn-outline-secondary">Limpar</button>
+            <button type="button" class="btn btn-success" id="printBtn">Imprimir</button>
           </div>
         </form>
       </div>
 
   <div class="col-lg-5 preview-column">
         <div class="card p-4 preview-card" id="previewCard">
+
           <div class="d-flex align-items-center mb-3">
             <div class="avatar-placeholder me-3" id="previewAvatar"></div>
             <div>
               <h4 id="previewName">Nome Completo</h4>
               <div class="text-muted" id="previewObjectiveTitle">Cargo desejado</div>
+              <div class="small text-muted" id="previewContact"></div>
             </div>
           </div>
 
